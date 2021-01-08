@@ -17,10 +17,12 @@
 	<body style="padding: 3%;">	
     <p align="right" style="margin: 15% 0;">
       <!-- Navigation -->
-      <button type="button" onclick="becomeachef()" class="button" id="becomeachef">Become a chef</button>
-      &nbsp;<a href="help">Help</pre></a>&nbsp;
-      &nbsp;<a href="signup">Sign Up</pre></a>&nbsp;
-      &nbsp;<a href="login">Log In</a>&nbsp;
+      {{#if login}}
+        {{> main-navbar-loggedin}}
+      {{else}}
+        {{> main-navbar}}
+      {{/if}}
+
     </p>
 		<!-- Header -->
     <header id="header">
@@ -41,7 +43,7 @@
 
           </form>
           <br>
-          <a href="search"><img src="images/magnifying-glass32.png" alt="none"/></a>
+          <a href="search?login=false"><img src="images/magnifying-glass32.png" alt="none"/></a>
         </tr>
         </tbody>
       </table>
@@ -76,9 +78,10 @@
     <script src="js/main.js"></script>
     <script src="js/jquery.js"></script>
     <script>
-    function becomeachef() {
-      window.location.href ="becomeachef";
+    function learnmore() {
+      window.location.href ="helpHIW";
     }
     </script>
+    {{> googleAnalytics}}
 	</body>
 </html>

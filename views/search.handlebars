@@ -7,77 +7,60 @@
 -->
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Chefbox</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chefbox</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/4-col-portfolio.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="css/4-col-portfolio.css" rel="stylesheet">
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <style>
+  .image { 
+     position: relative; 
+     width: 100%; /* for IE 6 */
+  }
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+  h2 { 
+     position: absolute;
+     bottom: 10px;
+     left: 0; 
+     width: 100%; 
+     text-align: left;
+  }
+  h2 span { 
+     color: white; 
+     font: bold 24px/45px Helvetica, Sans-Serif; 
+     letter-spacing: -1px;  
+     background: rgb(0, 0, 0); /* fallback color */
+     background: rgba(0, 0, 0, 0.7);
+     padding: 10px; 
+  }
+  h2 span.spacer {
+     padding:0 5px;
+  }
+  </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="opacity: 1;">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="main">Chefbox</a>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li>
-            <a href="main">&nbsp;&nbsp;Home</a>
-          </li>
-          <li>
-            <a href="login">&nbsp;&nbsp;Log In</a>
-          </li>
-          <li>
-            <a href="becomeachef">&nbsp;&nbsp;Become a Chef!</a>
-          </li>
-          <li>
-            <a href="signup">&nbsp;&nbsp;Sign Up</a>
-          </li>
-          <li>
-            <a href="discover">&nbsp;&nbsp;Discover</a>
-          </li>
-          <li>
-            <a href="help">&nbsp;&nbsp;Help</a>
-          </li>
-          <li>
-            <a href="howitworks">&nbsp;&nbsp;How it Works</a>
-          </li>
-        </ul>
-      </div>
-        <!-- /.navbar-collapse -->
-    </div>
-      <!-- /.container -->
-  </nav>
-
+  {{#if login}}
+    {{> navbar-loggedin}}
+  {{else}}
+    {{> navbar}}
+  {{/if}}
 
   <!-- Page Content -->
-  <div class="container" style="text-align: center; position: relative; z-index: 1" id="container">
+  <div class="container" style="text-align: center; position: relative; padding: none;" id="container">
     <div class="form-group">
-      <div class="input-group col-md-7" style="padding: 0 20px 0 20px;">
-        <input id="keyword-search" type="text" class="form-control"  placeholder="What kind of food?" style="text-align: center;"/>
+      <div class="input-group col-md-7">
+        <input id="keyword-search" type="text" class="form-control"  placeholder="Hi {{#if login}}{{user.firstname}}{{else}}there{{/if}}! What shall we eat today?" style="text-align: center;"/>
         <div class="input-group-btn" role="group">
-          <button style="background: #fff; border: none; text-shadow: none; padding: none;">
+          <button id="search-btn" style="background: #fff; border: none; text-shadow: none; padding: none;">
             <span>
               <img src="images/magnifying-glass32.png" alt="none" />
             </span>
@@ -86,39 +69,49 @@
       </div>
     </div>
     <hr>
-      {{#each fooditems}}
-        <div class="col-md-3 portfolio-item" id="{{id}}" style="text-align: center;">
-            <table>
+    <div class="col-md-12 portfolio-item" id="map-container" style="height: 350px;"></div>
+    <hr>
+    {{#if docs}}
+      <input type="hidden" id="len" value="{{docs.length}}" />
+      {{#each docs}}
+        <input type="hidden" id="createdOnId{{@index}}" value="{{createdOn}}"/>
+        <input type="hidden" id="lat{{@index}}" value="{{location.lat}}"/>
+        <input type="hidden" id="lng{{@index}}" value="{{location.lng}}"/>
+        <input type="hidden" id="price{{@index}}" value="{{price}}"/>
+        <input type="hidden" id="name{{@index}}" value="{{name}}"/>
+        <input type="hidden" id="description{{@index}}" value="{{description}}"/>
+        <div class="col-md-12 portfolio-item" id="{{createdOn}}" style="text-align: center;">
+          <table>
             <thead>
             </thead>
             <tbody>
               <tr>
                 <td>
-                  <button style="background: #fff; border: none; text-shadow: none;">
+                  <button id="img{{@index}}" style="background: #fff; border: none; text-shadow: none;">
                     <span class="image">
-                      <img src="{{imageURL}}" style="width: 100%;" alt="none" />
+                      <img src="data:{{img.contentType}};base64,{{img.data}}" style="width: 100%;" alt="none" />
+                      <h2><span>${{price}}<span class="spacer"></span><br/></span></h2>
                     </span>
                   </button>
                 </td>
                 <td>
-                  <b>{{price}}</b>, <b>{{rating}}</b>/5.0
+                  <b>${{price}}</b>, <b>{{reviews.avgrating}}</b>/5.0
                   <br>
-                  {{description}}
-                  <br><b>{{location}}</b><br>
-                  <b>There are : {{count}} : items left</b>
+                    {{description}}
+                  <br>
+                  <b>There are {{count}} items left</b>
                   <br>
                   <table align="center">
                     <thead>
                     </thead>
                     <tbody>
                       <td>
-                        <br><button type="button" class="btn btn-default">view</button>
+                        <br><button id="viewbtn{{@index}}" class="btn btn-default-order">view</button>
                       </td>
                       <td>&nbsp;&nbsp;</td>
                       <td>
-                          <form id="ordering" method="get" action="/decCounter">
-                        <br><button type="button" class="btn btn-primary">order now</button>
-                          </form>
+                        <br>
+                        {{> orderview this}}
                       </td>                      
                     </tbody>
                   </table>
@@ -129,37 +122,30 @@
         </div>
         <hr>
       {{/each}}
+    {{else}}
+      <input type="hidden" id="len" value="0"/>
+      {{> noresult}}
+    {{/if}}
+
+    <!-- Google Map -->
+    <!--  
       <div class="col-md-12 portfolio-item">
         <button type="button" class="btn btn-primary" id="moreBtn">&nbsp;&nbsp;&nbsp;<b>more</b>&nbsp;&nbsp;&nbsp;</button>
       </div>
-    </div>
+    -->
   </div>
 
-  <!--
-  <div class="container" style="position: relative; bottom:0; right: 0; left: 0;">
-    <footer>
-      <div class="row">
-        <div class="col-lg-12" style="text-align: center;">
-          <p>Copyright &copy; Chefbox 2016. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
-  </div>
-  -->
+  {{> footer}}
+  {{> googleAnalytics}}
   <script src="js/jquery.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <!-- Necessary for the Bootstrap modal view -->
+  <script src="js/bootstrap.min.js"></script> 
   <script src="js/search.js"></script>
-
-  <!-- custom -->
-  <script>
-  function loadMoreFoodItems() {
-
-  }
-
-  function loadFoodInfo() {
-    var id = $(this).attr('id');
-  }
-  </script>
+  {{#if docs}}
+    <script src="js/foodinfoModal.js"></script>
+  {{/if}}
+  <script src="js/map/googleMapSearch.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCojkxEmZw9xNuJPjaR97T2s4J8_gU1W9U&callback=GoogleMapsController.searchInitMap" async defer></script>
 
 </body>
 </html>

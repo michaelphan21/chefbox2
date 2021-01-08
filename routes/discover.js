@@ -5,7 +5,12 @@ var http = require('http').Server(app);
 var data = require('../data.json');
 
 router.get('/', function(req, res) {
-  res.render('discover', data);
+	var userdata = {
+		login: req.session.login,
+		data: data,
+		user: req.session.user
+	};
+  res.render('discover', userdata);
 });
 
 module.exports = router;

@@ -5,7 +5,11 @@
 			"price": "$4.5",
 			"avgrating": "4.5",
 			"description": "Anchovies, Tofu, Brown rice, Miso, Napa cabbage, Kimchi",
-			"location": "8910 Villa La Jolla Dr, San Diego, CA 92037",
+			"location": 
+				{
+					"lat": 32.879092,
+					"lng": -117.243386
+				},
 			"ingredients": "Anchovies, Tofu, Brown rice, Miso, Seaweed, Carrots, Napa cabbage, Sesame seeds, Kimchi, Red pepper powder",
 			"headline": "Home-cooked Japanese style meal with onigiri, miso, tofu, spiced anchovies and kimchi",
 			"title": "Home-cooked Japanese with Kimchi",
@@ -23,14 +27,24 @@
 					"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
 				}
 			],
-			"imageURL": "images/food1.jpg"			
+			"imageURL": "images/food1.jpg",
+			"available-time": [
+				"Tue, Mar. 1st 12:00 ~ 13:00",
+				"Wed, Mar. 2nd 12:00 ~ 13:00",
+				"Thu, Mar. 3rd 12:00 ~ 13:00",
+				"Fri, Mar. 4th 15:00 ~ 17:00"
+			]
 		},
 		{
 			"id": "aZ3521jXxasdfx2pupukw",
 			"price": "$4.75",
 			"rating": "4.3",
 			"description": "Salmon and Cole Slaw",
-			"location": "5384 Mt. Alifan Dr, San Diego, CA 92111",
+			"location": 
+				{
+					"lat": 32.877946,
+					"lng": -117.23287
+				},
 			"ingredients": "Salmon, Cabbage, Carrot, Mayonnaise, Wine Vinegar, Celery Seed, Lemon, Salt, Pepper",
 			"headline": "Grilled salmon with grapefruit cole slaw",
 			"title": "Grilled salmon with grapefruit cole slaw",
@@ -48,14 +62,24 @@
 					"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
 				}
 			],
-			"imageURL": "images/food2.jpg"			
+			"imageURL": "images/food2.jpg",
+			"available-time": [
+				"Wed, Mar. 2nd 12:00 ~ 13:00",
+				"Thu, Mar. 3rd 12:00 ~ 13:00",
+				"Fri, Mar. 4th 15:00 ~ 17:00",
+				"Sat, Mar. 5th 11:00 ~ 14:00"
+			]			
 		},
 		{
 			"id": "aZ352djjxkdfkw2234kl",
 			"price": "$5.0",
 			"rating": "4.6",
 			"description": "Anchovies, Tofu, Brown rice, Miso, Napa cabbage, Kimchi",
-			"location": "8910 Villa La Jolla Dr, San Diego, CA 92037",
+			"location": 
+				{
+					"lat": 32.870494,
+					"lng": -117.238939
+				},
 			"ingredients": "Pork, Barbeque Sauce, Cheddar, Lettuce, Salt, Pepper, Suggar",
 			"headline": "Jordan's pulled pork lettuce wrap with secret sauce",
 			"title": "Jordan's pulled pork lettuce wrap with secret sauce",
@@ -73,14 +97,24 @@
 					"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
 				}
 			],
-			"imageURL": "images/food3.jpg"			
+			"imageURL": "images/food3.jpg",
+			"available-time": [
+				"Tue, Mar. 1st 12:00 ~ 13:00",
+				"Thu, Mar. 3rd 12:00 ~ 13:00",
+				"Sat, Mar. 5th 11:00 ~ 14:00",
+				"Sun, Mar. 6th 14:00 ~ 16:00"
+			]			
 		},
 		{
 			"id": "aZ3521jdkvsldfkwdsfdh",
 			"price": "$11.50",
 			"rating": "2.5",
 			"description": "Diced vegetables and stuff in a pot",
-			"location": "5401 Gilman Dr, San Diego, CA 92093",
+			"location":
+				{
+					"lat": 32.870521,
+					"lng": -117.217105
+				},
 			"ingredients": "????",
 			"headline": "Train wreck of diced vegetable and strange egg like liquid",
 			"title": "Train wreck of diced vegetable and strange egg like liquid",
@@ -105,14 +139,24 @@
 
 			  }
 			],
-			"imageURL": "images/food4.jpg"			
+			"imageURL": "images/food4.jpg",
+			"available-time": [
+				"Tue, Mar. 1st 12:00 ~ 13:00",
+				"Thu, Mar. 3rd 12:00 ~ 13:00",
+				"Fri, Mar. 4th 15:00 ~ 17:00",
+				"Sun, Mar. 6th 14:00 ~ 16:00"
+			]				
 		},
 		{
 			"id": "aZ3521jXx1234985dfkw",
 			"price": "$5.0",
 			"rating": "4.2",
 			"description": "Home-cooked Japanese style meal",
-			"location": "8910 Villa La Jolla Dr, San Diego, CA 92037",
+			"location":
+				{
+					"lat": 32.868592,
+					"lng": -117.220820
+				},
 			"ingredients": "Pacific mackeral, Seaweed, Radish, Spinach, Garlic, Salt, Pepper",
 			"headline": "Home-cooked Japanese style meal",
 			"title": "Home-cooked Japanese style meal",
@@ -130,14 +174,24 @@
 					"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
 				}
 			],
-			"imageURL": "images/food5.jpg"
+			"imageURL": "images/food5.jpg",
+			"available-time": [
+				"Tue, Mar. 1st 12:00 ~ 13:00",
+				"Wed, Mar. 2nd 12:00 ~ 13:00",
+				"Sat, Mar. 5th 11:00 ~ 14:00",
+				"Sun, Mar. 6th 14:00 ~ 16:00"
+			]	
 		},
 		{
 			"id": "aZ3sxxslkd21jXxasdfkw",
 			"price": "$5.0",
 			"rating": "4.3",
 			"description": "Dried vegetarian curry with nan bread",
-			"location": "8645 Regents Drive, San Diego, CA 92122",
+			"location":
+				{
+					"lat": 32.874389,
+					"lng": -117.241458
+				},
 			"ingredients": "Lime, red pepper, mint leaves, lentils, chopped almonds, yellow pepper, milk, pepper, salt, cayenne pepper, and nan bread",
 			"headline": "Try this exotic dried vegetable and nut curry to sooth the soul",
 			"title": "Dried vegetable and nut curry",
@@ -185,14 +239,23 @@
 				"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
 				}
 			],
-			"imageURL": "images/food6.jpg"
+			"imageURL": "images/food6.jpg",
+			"available-time": [
+				"Tue, Mar. 1st 12:00 ~ 13:00",
+				"Thu, Mar. 3rd 12:00 ~ 13:00",
+				"Sun, Mar. 6th 14:00 ~ 16:00"
+			]	
 		},
 		{
 			"id": "aZ3sxx2236d21jXxasdfkw",
 			"price": "$5.0",
 			"rating": "4.3",
 			"description": "sausage taco with cream sauce",
-			"location": "8910 Villa La Jolla Dr, San Diego, CA 92037",
+			"location":
+				{
+					"lat": 32.878484,
+					"lng": -117.213509
+				},
 			"ingredients": "sausage, bun, cream sauce",
 			"headline": "Luke's sausage taco with cream sauce",
 			"title": "Luke's sausage taco with cream sauce",
@@ -210,14 +273,26 @@
 					"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
 				}
 			],
-			"imageURL": "images/food7.jpg"
+			"imageURL": "images/food7.jpg",
+			"available-time": [
+				"Tue, Mar. 1st 12:00 ~ 13:00",
+				"Wed, Mar. 2nd 12:00 ~ 13:00",
+				"Thu, Mar. 3rd 12:00 ~ 13:00",
+				"Fri, Mar. 4th 15:00 ~ 17:00",
+				"Sat, Mar. 5th 11:00 ~ 14:00",
+				"Sun, Mar. 6th 14:00 ~ 16:00"
+			]	
 		},
 		{
 			"id": "aZ3sxx223xxZZswqasdfkw",
 			"price": "$5.0",
 			"rating": "4.3",
 			"description": "Garden salad with oriental dressing and grilled salmon",
-			"location": "8910 Villa La Jolla Dr, San Diego, CA 92037",
+			"location":
+				{
+					"lat": 32.869569,
+					"lng": -117.231897
+				},
 			"ingredients": "Anchovies, Tofu, Brown rice, Miso, Seaweed, Carrots, Napa cabbage, Sesame seeds, Kimchi, Red pepper powder",
 			"headline": "Michael's garden salad with oriental dressing and grilled salmon",
 			"title": "Garden salad with oriental dressing and grilled salmon",
@@ -235,14 +310,25 @@
 					"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
 				}
 			],
-			"imageURL": "images/food10.jpg"
+			"imageURL": "images/food10.jpg",
+			"available-time": [
+				"Tue, Mar. 1st 12:00 ~ 13:00",
+				"Wed, Mar. 2nd 12:00 ~ 13:00",
+				"Wed, Mar. 2nd 16:00 ~ 17:00",
+				"Thu, Mar. 3rd 12:00 ~ 13:00",
+				"Fri, Mar. 4th 15:00 ~ 17:00"
+			]	
 		},
 		{
 			"id": "aZ3sTR2235Yadq5QAAdfkw",
 			"price": "$5.0",
 			"rating": "4.3",
 			"description": "Craft steak burger, a nice companion for a San Diegan brewary IPA",
-			"location": "8910 Villa La Jolla Dr, San Diego, CA 92037",
+			"location":
+				{
+					"lat": 32.884414,
+					"lng": -117.211912
+				},
 			"ingredients": "Beef patty, red onion, lettuce, tomato, slice cheese, wheat bread",
 			"headline": "Jasmine's craft steak burger",
 			"title": "Jasmine's craft steak burger",
@@ -260,14 +346,25 @@
 					"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
 				}
 			],
-			"imageURL": "images/food11.jpg"
+			"imageURL": "images/food11.jpg",
+			"available-time": [
+				"Wed, Mar. 2nd 12:00 ~ 13:00",
+				"Wed, Mar. 2nd 16:00 ~ 17:00",
+				"Thu, Mar. 3rd 12:00 ~ 13:00",
+				"Fri, Mar. 4th 15:00 ~ 17:00",
+				"Sun, Mar. 6th 14:00 ~ 16:00"
+			]		
 		},
 		{
 			"id": "aZ3sxQW6W890jXxasdXXfkw",
 			"price": "$6.0",
 			"rating": "4.3",
 			"description": "Chicken curry with nan bread",
-			"location": "8913 Villa La Jolla Dr, San Diego, CA 92122",
+			"location":
+				{
+					"lat": 32.889190,
+					"lng": -117.222403
+				},
 			"ingredients": "milk, chicken, basil leaves, nan bread, vegetable oil, pepper",
 			"headline": "The best home made Chicken curry you'll ever find in Villa La Jolla Drive",
 			"title": "Home-cooked Chicken curry with nan bread",
@@ -291,14 +388,28 @@
 				    "review": "definetly some of the best curry I've had in a long time. The creaminess of the curry was very apparent and the chicken tasted fresh "
 			    }
 			],
-			"imageURL": "images/bg04.jpg"
+			"imageURL": "images/bg04.jpg",
+			"available-time": [
+				"Mon, Feb. 29th 11:00 ~ 12:30",
+				"Tue, Mar. 1st 12:00 ~ 13:00",
+				"Wed, Mar. 2nd 12:00 ~ 13:00",
+				"Wed, Mar. 2nd 16:00 ~ 17:00",
+				"Thu, Mar. 3rd 12:00 ~ 13:00",
+				"Fri, Mar. 4th 15:00 ~ 17:00",
+				"Sat, Mar. 5th 11:00 ~ 14:00",
+				"Sun, Mar. 6th 14:00 ~ 16:00"
+			]		
 		},
 		{
 			"id": "aZ3sx3p5RRBZdQQ3asdXXfkw",
-			"price": "",
+			"price": "$5.5",
 			"rating": "4.7",
-			"description": "Kimberly's Irish smoked salmon canapes",
-			"location": "3576 Nobel Drive, San Diego, CA 92037",
+			"description": "Kimberly's Irish smoked salmon canapes (6pcs)",
+			"location":
+				{
+					"lat": 32.867791,
+					"lng": -117.234824
+				},
 			"ingredients": "smoked salmon, cream cheese, fresh lemon juice, chives, salt, heavy cream, Worcestershire Sauce, horseradish",
 			"headline": "Kimberly's Irish smoked salmon canapes",
 			"title": "Love where you live, free salmon canapes sampling",
@@ -322,14 +433,26 @@
 				"review": "For freebies they were adequate but these are typically sold for $1.95 a piece at Kimberly's store. I can't find myself willing to pay more than .50 for them. I mean what kind of incompetent bozo can't put some cream cheese and salmon on a biscuit?"
 			  }
 			],
-			"imageURL": "images/bg02.jpg"
+			"imageURL": "images/bg02.jpg",
+			"available-time": [
+				"Mon, Feb. 29th 11:00 ~ 12:30",
+				"Tue, March 1st 12:00 ~ 13:00",
+				"Wed, March 2nd 16:00 ~ 17:00",
+				"Thu, March 3rd 12:00 ~ 13:00",
+				"Fri, March 4th 15:00 ~ 17:00",
+				"Sat, March 5th 11:00 ~ 14:00"
+			]	
 		},
 		{
 			"id": "aZ3sx3p5yPPZNMBD3asdXfkw",
 			"price": "$4.65",
 			"rating": "4.0",
 			"description": "Open sandwich with goat cheese, chery tomatoes, spinach, and salami",
-			"location": "3401 Gilman Dr, San Diego, CA 92093",
+			"location":
+				{
+					"lat": 32.874577,
+					"lng": -117.222342
+				},
 			"ingredients": "Avocado, cherry tomatoes, herbed ciabatta bread, dressing, goat cheese, swiss cheese, and salami",
 			"headline": "Irene's open sandwich with goat cheese, chery tomatoes and salami",
 			"title": "Home-cooked Japanese with Kimchi",
@@ -347,7 +470,14 @@
 					"review": "It's like a subtle yet explosive feeling in your mouth. I need to find where these cherry tomatoes are from"
 				}
 			],
-			"imageURL": "images/bg01.jpg"
+			"imageURL": "images/bg01.jpg",
+			"available-time": [
+				"Mon, Feb. 29th 11:00 ~ 12:30",
+				"Tue, March 1st 12:00 ~ 13:00",
+				"Thu, March 3rd 12:00 ~ 13:00",
+				"Sat, March 5th 11:00 ~ 14:00",
+				"Sun, March 6th 14:00 ~ 16:00"
+			]
 		}
 	]
 }

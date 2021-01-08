@@ -1,0 +1,59 @@
+<!-- hidden values -->
+<input type="hidden" id="numOfAvailableTimes" value="{{availableTimes.length}}"/>
+<input type="hidden" id="createdOn" value="{{createdOn}}"/>
+<input type="hidden" id="email" value="{{email}}"/>
+
+<!-- Button trigger modal -->                      
+<button class="btn btn-primary-order" data-toggle="modal" data-target="#myModal">
+  order now
+</button>
+<!-- Modal -->
+<div class="modal-order-view fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-order-view-dialog">
+    <div class="modal-order-view-content">
+      <div class="modal-order-view-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-order-view-title" id="myModalLabel">Review your order</h4>
+        <br>
+        <img src="data:{{img.contentType}};base64,{{img.data}}" style="width: 100%;" alt="none" />
+        <br>
+        <br>
+        <p style="text-align: left;">Ingredients: {{description}} <b></b></p>
+        <p style="text-align: left;">Price: ${{price}} <b></b></p>
+      </div>
+      <div class="modal-order-view-body">
+        <table align="center">
+        <thead>
+          <td></td>
+          <td>Available Times</td>
+          <td></td>
+          <td></td>
+        </thead>
+        <tbody>
+          {{#each availableTimes}}
+          <tr>
+            <td><img id="select-row-img{{@index}}" src="" alt=""/></td>
+            <td id="select-row{{@index}}">{{this}}</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td><button id="selectBtn{{@index}}" class="btn btn-default-select">Select</button></td>
+          </tr>
+          <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+          {{/each}}
+        </tbody>
+        </table>
+        <br>
+        * To check out other time availability, 
+        <br>
+        please message the chef
+      </div>
+      <div class="modal-order-view-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Go back</button>
+        <button type="button" class="btn btn-primary" id="confirm-btn">Confirm</button>
+        <button type="button" class="btn btn-primary" id="message-btn">Message the chef</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

@@ -9,7 +9,6 @@ router.sendIndex = function(req, res) {
 	var foodIdx = 0;
 	var len = data.fooditems.length;
 	for (i = 0; i < len; ++i) {
-		//console.log("data.fooditems[i].id:" + data.fooditems[i].id);
 		if (foodID == data.fooditems[i].id) {
 			foodIdx = i;
 		}
@@ -22,7 +21,6 @@ router.sendData = function(req, res) {
 	var foodIdx = 0;
 	var len = data.fooditems.length;
 	for (i = 0; i < len; ++i) {
-		//console.log("data.fooditems[i].id:" + data.fooditems[i].id);
 		if (foodID == data.fooditems[i].id) {
 			foodIdx = i;
 		}

@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <title>Chefbox</title>
+  <title>Chefbox</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="../css/bootstrap.css" rel="stylesheet">
+  <!-- Bootstrap Core CSS -->
+  <link href="../css/bootstrap.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="../css/4-col-portfolio.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="../css/4-col-portfolio.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
   <style>
     unli {
       text-decoration: underline;
@@ -38,85 +38,46 @@
   </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="main">Chefbox</a>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li>
-            <a href="main">&nbsp;&nbsp;Home</a>
-          </li>
-          <li>
-            <a href="login">&nbsp;&nbsp;Log In</a>
-          </li>
-          <li>
-            <a href="becomeachef">&nbsp;&nbsp;Become a Chef!</a>
-          </li>
-          <li>
-            <a href="signup">&nbsp;&nbsp;Sign Up</a>
-          </li>
-          <li>
-            <a href="search">&nbsp;&nbsp;Search</a>
-          </li>
-          <li>
-            <a href="discover">&nbsp;&nbsp;Discover</a>
-          </li>
-          <li>
-            <a href="help">&nbsp;&nbsp;Help</a>
-          </li>
-          <li>
-            <a href="howitworks">&nbsp;&nbsp;How it Works</a>
-          </li>
-        </ul>
-      </div>
-        <!-- /.navbar-collapse -->
-    </div>
-      <!-- /.container -->
-  </nav>
+  {{#if login}}
+    {{> navbar-loggedin}}
+  {{else}}
+    {{> navbar}}
+  {{/if}}
 
   <div class="container" style="text-align: center; position: relative; z-index: 1" id="container">
-      <div class="form-group">
-          <div class="input-group col-md-7" style="padding: 0 20px 0 20px;">
-              <input id="keyword-search" type="text" class="form-control"  placeholder="What kind of food?" style="text-align: center;"/>
-              <div class="input-group-btn" role="group">
-                  <button style="background: #fff; border: none; text-shadow: none; padding: none;">
+    <div class="form-group">
+      <div class="input-group col-md-7" style="padding: 0 20px 0 20px;">
+        <input id="keyword-search" type="text" class="form-control"  placeholder="Hi {{#if login}}{{user.firstname}}{{else}}there{{/if}}, what kind of food?" style="text-align: center;"/>
+        <div class="input-group-btn" role="group">
+          <button style="background: #fff; border: none; text-shadow: none; padding: none;">
             <span>
               <a href="search"><img src="images/magnifying-glass32.png" alt="none"/></a>
             </span>
-                  </button>
-              </div>
-          </div>
+          </button>
+        </div>
       </div>
+    </div>
   </div>
   <div class="container">
+    <input type="hidden" id="lat" value="{{doc.location.lat}}"/>
+    <input type="hidden" id="lng" value="{{doc.location.lng}}"/>
     <div class="row" style="text-align: center;">
       <div class="col-md-12" align="cetner">
         <a href="#">
-          <img class="img-responsive" src="{{imageURL}}" alt="">
+          <img class="img-responsive" src="data:{{doc.img.contentType}};base64,{{doc.img.data}}" alt="">
         </a>
       </div>
       <div class="col-md-12">
         <h1 class="page-header">
-          <small id="headline"><b>{{headline}}</b></small>
+          <small id="headline"><b>{{doc.name}}</b></small>
           <br>
-          <small id="price"><b>{{price}}</b></small>
+          <small id="price"><b>${{doc.price}}</b></small>
           <br>
           <small id="avgratings">
-            {{numofratings}} ratings:&nbsp;<unli><b>{{avgrating}}/5.0</b></unli>
+            {{doc.reviews.numofratings}} ratings:&nbsp;<unli><b>{{doc.reviews.avgrating}}/5.0</b></unli>
           </small>
         </h1>
-        <p align:"center">{{ingredientdetails}}</p>
+        <p align:"center">{{doc.ingredients}}</p>
       </div>      
     </div>
     <div class="row" style="text-align: center;">
@@ -142,11 +103,11 @@
         <tbody>
           <tr>
             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-            <td>{{calories}}</td>
+            <td>{{doc.calories}}</td>
             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-            <td>{{type}}</td>
+            <td>{{doc.type}}</td>
             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-            <td>{{ingredients}}</td>
+            <td>{{doc.ingredients}}</td>
             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
           </tr>
         </tbody>
@@ -156,23 +117,23 @@
     <div class="row" style="text-align: center;">
       <table align="center">
         <thead>
+          <th></th>
+          <th></th>
+          <th></th>
         </thead>
         <tbody>
           <td>
             <a href="message">Message Chef Now!</a>
           </td>
-          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
           <td>
-            <button class="btn-lg btn-default">order now</button>
-          </td>
-          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-          <td>
-            <button class="btn-lg btn-primary">pre-order</button>
+            {{> orderview this.doc}}
           </td>
         </tbody>
       </table>
+    </div>
     <br><br><br>
-    <div class="row" style="text-align: center;"><b>{{numofreviews}} Reviews</b></div>
+    <div class="row" style="text-align: center;"><b>{{doc.reviews.numofreviews}} Reviews</b></div>
     <br>
     <div class="col-md-12">
       <div class="input-group">
@@ -187,48 +148,29 @@
       </div>
     </div>
     <hr>
-    <div class="row" style="text-align: center; width: 100%; margin: auto;">
-      {{#each reviews}}
-      <div class="col-md-3 portfolio-item">
-        <b>{{reviewtitle}} {{rating}}</b>/5.0
-        <p>{{review}}</p>
+    <div class="row" style="width: 100%; margin: auto;">
+      {{#each doc.reviews.userReviews}}
+      <div class="col-md-12 portfolio-item">
+        <p><b>{{reviewtitle}}</b>&nbsp;{{rating}}/5.0</p>
+        <small>{{review}}</small>
       </div>
       {{/each}}
     </div>
+    <hr>
+    <div class="col-md-12">
+      <p style="text-align: center; color:#666666;"><b>You can pick up this item at the location below</b></p>
+    </div>
+    <div class="col-md-12" id="map-container" style="height: 350px;"></div>
+    {{> footer}}
   </div>
 
-  <div id="map-container" class="col-md-12"></div>
-    <script>
-      var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map-container'), {
-          center: {lat: 32.843, lng: -117.258},
-          zoom: 13
-        });
-      }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCojkxEmZw9xNuJPjaR97T2s4J8_gU1W9U&callback=initMap" async defer></script>
+  {{> googleAnalytics}}
 
-    <!-- Footer -->
-    <footer>
-      <div class="row">
-        <div class="col-lg-12" style="text-align: center;">
-          <p>Copyright &copy; Chefbox 2016. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
-
-  </div>
-  <!-- /.container -->
-
-  <!-- jQuery -->
-  <script src="../js/jquery.js"></script>
-
-  <!-- Bootstrap Core JavaScript -->
-  <script src="../js/bootstrap.min.js"></script>
-
-  <!-- Google Map -->
-  <script src="../js/map/googleMapSearch.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/map/googleMapSearch.js"></script>
+  <script src="js/foodinfoModal.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCojkxEmZw9xNuJPjaR97T2s4J8_gU1W9U&callback=GoogleMapsController.foodinfoInitMap" async defer></script>
 
 </body>
 </html>

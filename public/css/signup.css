@@ -17,12 +17,18 @@
   font-family: "Roboto", sans-serif;
   outline: 0;
   background: #f2f2f2;
-  width: 100%;
+  width: 90%;
   border: 0;
   margin: 0 0 15px;
   padding: 15px;
   box-sizing: border-box;
   font-size: 14px;
+}
+
+.form label{
+  margin-left: 8px;
+  color: red;
+  font-size: 24px;
 }
 .form button {
   font-family: "Roboto", sans-serif;
@@ -49,9 +55,6 @@
 .form .message a {
   color: #4CAF50;
   text-decoration: none;
-}
-.form .login-form {
-  display: none;
 }
 .container {
   position: relative;
